@@ -4,6 +4,7 @@ import os
 from typing import List
 
 from constants import OPENAI_EMBEDDINGS_MODEL
+from constants import BAAI_EMBEDDINGS_MODEL
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 from llama_index.core import Document, StorageContext
@@ -43,10 +44,12 @@ def get_documents(folder_path: str) -> List[Document]:
 
 
 from langchain_openai import OpenAIEmbeddings
+from FlagEmbedding import BGEM3FlagModel
 
 # Embeddings:
-# Testing with OpenAI's model, AND BAAI/bdg-m: https://huggingface.co/BAAI/bge-m3
+# Testing with OpenAI's model, AND BAAI/bdg-m3: https://huggingface.co/BAAI/bge-m3 "BGEM3FlagModel"
 embedder = OpenAIEmbeddings(model=OPENAI_EMBEDDINGS_MODEL)
+#embedder = BGEM3FlagModel(BAAI_EMEDDINGS_MODEL)
 
 
 async def main():
