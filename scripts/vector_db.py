@@ -49,7 +49,7 @@ from FlagEmbedding import BGEM3FlagModel
 # Embeddings:
 # Testing with OpenAI's model, AND BAAI/bdg-m3: https://huggingface.co/BAAI/bge-m3 "BGEM3FlagModel"
 embedder = OpenAIEmbeddings(model=OPENAI_EMBEDDINGS_MODEL)
-#embedder = BGEM3FlagModel(BAAI_EMEDDINGS_MODEL)
+#embedder = BGEM3FlagModel(BAAI_EMEDDINGS_MODEL, use_fp16=True) # Setting use_fp16 to True speeds up computation with a slight performance degradation
 
 
 async def main():
